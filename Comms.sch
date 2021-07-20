@@ -1,0 +1,155 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr USLedger 17000 11000
+encoding utf-8
+Sheet 1 1
+Title "Flight Computer Series 2"
+Date "2020-10-23"
+Rev "B"
+Comp "Michigan Aeronautical Science Association"
+Comment1 "Alex Davenport"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L engine_controller_series3-rescue:MAX3491-engine_controller_series3-rescue U15
+U 1 1 5970BB8C
+P 12750 4750
+F 0 "U15" H 12750 5150 49  0000 C CNN
+F 1 "MAX3491" H 12750 4100 49  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 12950 4150 49  0001 C CNN
+F 3 "" H 12950 4150 49  0001 C CNN
+	1    12750 4750
+	1    0    0    -1  
+$EndComp
+NoConn ~ 12350 4750
+NoConn ~ 12350 4850
+$Comp
+L power:GND #PWR0118
+U 1 1 5970BC4F
+P 12350 5225
+F 0 "#PWR0118" H 12350 4975 50  0001 C CNN
+F 1 "GND" H 12350 5075 50  0000 C CNN
+F 2 "" H 12350 5225 50  0001 C CNN
+F 3 "" H 12350 5225 50  0001 C CNN
+	1    12350 5225
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0124
+U 1 1 5970BEA5
+P 13850 5000
+F 0 "#PWR0124" H 13850 4850 50  0001 C CNN
+F 1 "+3V3" H 13850 5140 50  0000 C CNN
+F 2 "" H 13850 5000 50  0001 C CNN
+F 3 "" H 13850 5000 50  0001 C CNN
+	1    13850 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0125
+U 1 1 5970BEBB
+P 13975 5200
+F 0 "#PWR0125" H 13975 4950 50  0001 C CNN
+F 1 "GND" H 13975 5050 50  0000 C CNN
+F 2 "" H 13975 5200 50  0001 C CNN
+F 3 "" H 13975 5200 50  0001 C CNN
+	1    13975 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0117
+U 1 1 5970C189
+P 12350 4300
+F 0 "#PWR0117" H 12350 4150 50  0001 C CNN
+F 1 "+3V3" H 12350 4440 50  0000 C CNN
+F 2 "" H 12350 4300 50  0001 C CNN
+F 3 "" H 12350 4300 50  0001 C CNN
+	1    12350 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R48
+U 1 1 5972FB2A
+P 13800 4550
+F 0 "R48" V 13880 4550 50  0000 C CNN
+F 1 "100" V 13800 4550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13730 4550 50  0001 C CNN
+F 3 "" H 13800 4550 50  0001 C CNN
+	1    13800 4550
+	0    1    1    0   
+$EndComp
+Text GLabel 13150 4950 2    49   Output ~ 0
+USART1_RX
+Text GLabel 13150 5250 2    49   Input ~ 0
+USART1_TX
+Wire Wire Line
+	13150 5150 13850 5150
+Wire Wire Line
+	13850 5150 13850 5000
+Wire Wire Line
+	13150 5050 13975 5050
+Wire Wire Line
+	13975 5050 13975 5200
+$Comp
+L Device:C C50
+U 1 1 59791997
+P 11975 4825
+F 0 "C50" H 12000 4925 50  0000 L CNN
+F 1 "100nF" H 12000 4725 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 12013 4675 50  0001 C CNN
+F 3 "" H 11975 4825 50  0001 C CNN
+	1    11975 4825
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11975 4675 11975 4600
+Wire Wire Line
+	11975 4600 12350 4600
+Wire Wire Line
+	11975 4975 11975 5000
+Wire Wire Line
+	11975 5000 12350 5000
+Text GLabel 14000 4500 1    49   Input ~ 0
+RX_1_P
+Text GLabel 13600 4500 1    49   Input ~ 0
+RX_1_N
+Text GLabel 13150 4500 2    49   Output ~ 0
+TX_1_P
+Text GLabel 13150 4600 2    49   Output ~ 0
+TX_1_N
+Wire Wire Line
+	13150 4700 13600 4700
+Wire Wire Line
+	13600 4700 13600 4550
+Wire Wire Line
+	13650 4550 13600 4550
+Connection ~ 13600 4550
+Wire Wire Line
+	13600 4550 13600 4500
+Wire Wire Line
+	13150 4800 14000 4800
+Wire Wire Line
+	14000 4800 14000 4550
+Wire Wire Line
+	14000 4550 13950 4550
+Wire Wire Line
+	14000 4500 14000 4550
+Connection ~ 14000 4550
+Wire Wire Line
+	12350 4300 12350 4500
+Wire Wire Line
+	12350 5000 12350 5100
+Connection ~ 12350 4500
+Wire Wire Line
+	12350 4500 12350 4600
+Connection ~ 12350 4600
+Connection ~ 12350 5000
+Connection ~ 12350 5100
+Wire Wire Line
+	12350 5100 12350 5225
+Text Notes 11650 3900 0    118  ~ 24
+RS-422
+$EndSCHEMATC
